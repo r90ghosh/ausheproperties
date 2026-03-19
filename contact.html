@@ -651,59 +651,339 @@
     }
 
     /* ========================================
-       DAY PILLS
+       DATE PICKER — CUSTOM LUXURY CALENDAR
        ======================================== */
-    .day-prefs {
-      margin-bottom: 8px;
+    .form-field-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
     }
 
-    .day-prefs-label {
-      font-family: var(--font-heading);
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-      display: block;
+    .form-field-hint.error {
+      color: #ef4444;
     }
 
-    .day-pills {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    /* Date input trigger */
+    .date-input-wrap {
+      position: relative;
     }
 
-    .day-pill {
+    .date-input-trigger {
+      width: 100%;
+      padding: 14px 16px;
+      padding-right: 48px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      outline: none;
       cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
-    .day-pill input {
+    .date-input-trigger:focus,
+    .date-input-trigger.active {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196,162,101,0.15);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .date-input-trigger.placeholder {
+      color: var(--text-muted);
+    }
+
+    .date-input-icon {
       position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .date-input-trigger:focus ~ .date-input-icon,
+    .date-input-trigger.active ~ .date-input-icon {
+      color: var(--gold);
+    }
+
+    /* Calendar popover */
+    .calendar-popover {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.95);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 1px rgba(196,162,101,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+      padding: 24px;
       opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.98);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      max-width: 380px;
+    }
+
+    .calendar-popover.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Calendar header */
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .calendar-month-year {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.3px;
+    }
+
+    .calendar-nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .calendar-nav-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .calendar-nav-btn:hover {
+      border-color: rgba(196,162,101,0.3);
+      background: rgba(196,162,101,0.08);
+      color: var(--gold);
+    }
+
+    .calendar-nav-btn:active {
+      transform: scale(0.92);
+    }
+
+    .calendar-nav-btn.disabled {
+      opacity: 0.25;
       pointer-events: none;
     }
 
-    .day-pill span {
-      display: inline-block;
-      padding: 8px 20px;
-      border-radius: 100px;
-      border: 1px solid var(--glass-border);
-      background: var(--glass-bg);
-      font-family: var(--font-heading);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      transition: all 0.3s ease;
+    /* Day-of-week labels */
+    .calendar-dow {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      margin-bottom: 6px;
     }
 
-    .day-pill input:checked + span {
+    .calendar-dow span {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--text-muted);
+      padding: 6px 0;
+    }
+
+    .calendar-dow span.weekend {
+      color: var(--text-muted);
+    }
+
+    /* Calendar grid */
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+
+    .calendar-day {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 400;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-primary);
+      border: 1px solid transparent;
+    }
+
+    .calendar-day:hover:not(.disabled):not(.weekend):not(.empty) {
+      background: rgba(196,162,101,0.1);
+      border-color: rgba(196,162,101,0.25);
+      color: var(--gold);
+      box-shadow: 0 0 12px rgba(196,162,101,0.08);
+    }
+
+    .calendar-day.empty {
+      cursor: default;
+    }
+
+    /* Today indicator */
+    .calendar-day.today {
+      border-color: rgba(196,162,101,0.2);
+      background: rgba(196,162,101,0.05);
+      font-weight: 500;
+    }
+
+    .calendar-day.today::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    /* Selected */
+    .calendar-day.selected {
+      background: linear-gradient(135deg, rgba(196,162,101,0.3), rgba(196,162,101,0.15));
       border-color: var(--gold);
       color: var(--gold);
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(196,162,101,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+
+    .calendar-day.selected::after {
+      display: none;
+    }
+
+    /* Disabled (past dates) */
+    .calendar-day.disabled {
+      color: rgba(102,102,102,0.35);
+      cursor: not-allowed;
+    }
+
+    .calendar-day.disabled:hover {
+      background: transparent;
+      border-color: transparent;
+    }
+
+    /* Weekend (Sat/Sun) — slightly dimmed but selectable */
+    .calendar-day.weekend {
+      color: var(--text-secondary);
+    }
+
+    /* Calendar footer */
+    .calendar-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .calendar-footer-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .calendar-footer-hint .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .calendar-today-btn {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .calendar-today-btn:hover {
       background: rgba(196,162,101,0.1);
     }
 
-    .day-pill span:hover {
-      border-color: var(--glass-border-hover);
-      background: var(--glass-bg-hover);
+    /* Calendar overlay to close on click outside */
+    .calendar-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      display: none;
+    }
+
+    .calendar-backdrop.open {
+      display: block;
+    }
+
+    @media (max-width: 480px) {
+      .calendar-popover {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 28px 20px;
+        padding-bottom: calc(28px + env(safe-area-inset-bottom));
+        transform: translateY(100%);
+      }
+
+      .calendar-popover.open {
+        transform: translateY(0);
+      }
+
+      .calendar-backdrop.open {
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+
+      .calendar-day {
+        font-size: 0.92rem;
+        border-radius: 12px;
+      }
     }
 
     /* ========================================
@@ -1123,14 +1403,7 @@
         padding: 24px 18px;
       }
 
-      .day-pills {
-        gap: 8px;
-      }
-
-      .day-pill span {
-        padding: 7px 16px;
-        font-size: 0.8rem;
-      }
+      /* removed day pills */
     }
   </style>
 </head>
@@ -1320,17 +1593,55 @@
             </div>
           </div>
 
-          <!-- Day preference: checkbox pills -->
-          <div class="day-prefs">
-            <span class="day-prefs-label">Preferred days:</span>
-            <div class="day-pills">
-              <label class="day-pill"><input type="checkbox" name="preferred-days" value="Mon"><span>Mon</span></label>
-              <label class="day-pill"><input type="checkbox" name="preferred-days" value="Tue"><span>Tue</span></label>
-              <label class="day-pill"><input type="checkbox" name="preferred-days" value="Wed"><span>Wed</span></label>
-              <label class="day-pill"><input type="checkbox" name="preferred-days" value="Thu"><span>Thu</span></label>
-              <label class="day-pill"><input type="checkbox" name="preferred-days" value="Fri"><span>Fri</span></label>
+          <!-- Custom Date Picker -->
+          <div class="form-row">
+            <div class="form-field full">
+              <label for="preferred-date">Preferred Date *</label>
+              <input type="hidden" id="preferred-date" name="preferred-date" required>
+              <div class="date-input-wrap" id="datePickerWrap">
+                <div class="date-input-trigger placeholder" id="dateInputTrigger" tabindex="0" role="combobox" aria-expanded="false" aria-haspopup="dialog" aria-label="Select preferred date">
+                  Select a weekday
+                </div>
+                <div class="date-input-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                    <path d="M16 2v4M8 2v4M3 10h18"/>
+                  </svg>
+                </div>
+                <div class="calendar-popover" id="calendarPopover" role="dialog" aria-label="Date picker calendar">
+                  <div class="calendar-header">
+                    <div class="calendar-nav">
+                      <button type="button" class="calendar-nav-btn" id="calPrev" aria-label="Previous month">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                      </button>
+                    </div>
+                    <span class="calendar-month-year" id="calMonthYear"></span>
+                    <div class="calendar-nav">
+                      <button type="button" class="calendar-nav-btn" id="calNext" aria-label="Next month">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="calendar-dow">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span class="weekend">Sat</span>
+                    <span class="weekend">Sun</span>
+                  </div>
+                  <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Calendar days"></div>
+                  <div class="calendar-footer">
+                    <span class="calendar-footer-hint"><span class="dot"></span> Today</span>
+                    <button type="button" class="calendar-today-btn" id="calTodayBtn">Go to today</button>
+                  </div>
+                </div>
+              </div>
+              <p class="form-field-hint" id="dateHint">Weekdays only (Mon -- Fri)</p>
             </div>
           </div>
+          <div class="calendar-backdrop" id="calendarBackdrop"></div>
 
           <!-- Time windows: 4 radio cards -->
           <div class="time-windows" id="timeWindows">
@@ -1517,7 +1828,235 @@
     })();
 
     /* ========================================
-       5. TIMEZONE-SMART TIME PICKER
+       5. CUSTOM LUXURY DATE PICKER
+       ======================================== */
+    (function() {
+      var hiddenInput = document.getElementById('preferred-date');
+      var trigger = document.getElementById('dateInputTrigger');
+      var popover = document.getElementById('calendarPopover');
+      var backdrop = document.getElementById('calendarBackdrop');
+      var grid = document.getElementById('calendarGrid');
+      var monthYearLabel = document.getElementById('calMonthYear');
+      var prevBtn = document.getElementById('calPrev');
+      var nextBtn = document.getElementById('calNext');
+      var todayBtn = document.getElementById('calTodayBtn');
+      var dateHint = document.getElementById('dateHint');
+
+      var MONTH_NAMES = [
+        'January','February','March','April','May','June',
+        'July','August','September','October','November','December'
+      ];
+
+      var today = new Date();
+      today.setHours(0,0,0,0);
+
+      var tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+
+      // Calendar state
+      var viewMonth = tomorrow.getMonth();
+      var viewYear = tomorrow.getFullYear();
+      var selectedDate = null;
+      var isOpen = false;
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function dateToStr(d) {
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+      }
+
+      function isSameDay(a, b) {
+        return a.getFullYear() === b.getFullYear() &&
+               a.getMonth() === b.getMonth() &&
+               a.getDate() === b.getDate();
+      }
+
+      function formatDisplay(d) {
+        var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        return days[d.getDay()] + ', ' + MONTH_NAMES[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+      }
+
+      function openCalendar() {
+        isOpen = true;
+        popover.classList.add('open');
+        backdrop.classList.add('open');
+        trigger.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeCalendar() {
+        isOpen = false;
+        popover.classList.remove('open');
+        backdrop.classList.remove('open');
+        trigger.classList.remove('active');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+
+      function toggleCalendar() {
+        isOpen ? closeCalendar() : openCalendar();
+      }
+
+      // Render calendar grid
+      function render() {
+        monthYearLabel.textContent = MONTH_NAMES[viewMonth] + ' ' + viewYear;
+        grid.innerHTML = '';
+
+        // Determine if prev button should be disabled
+        var minMonth = tomorrow.getMonth();
+        var minYear = tomorrow.getFullYear();
+        if (viewYear < minYear || (viewYear === minYear && viewMonth <= minMonth)) {
+          prevBtn.classList.add('disabled');
+        } else {
+          prevBtn.classList.remove('disabled');
+        }
+
+        // First day of month
+        var firstDay = new Date(viewYear, viewMonth, 1);
+        // getDay() returns 0=Sun ... 6=Sat
+        // We want Mon=0 ... Sun=6
+        var startDow = (firstDay.getDay() + 6) % 7;
+
+        var daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+        // Empty cells for days before start
+        for (var i = 0; i < startDow; i++) {
+          var empty = document.createElement('div');
+          empty.className = 'calendar-day empty';
+          grid.appendChild(empty);
+        }
+
+        // Day cells
+        for (var d = 1; d <= daysInMonth; d++) {
+          var date = new Date(viewYear, viewMonth, d);
+          var dow = date.getDay(); // 0=Sun, 6=Sat
+          var cell = document.createElement('div');
+          cell.className = 'calendar-day';
+          cell.textContent = d;
+          cell.setAttribute('role', 'gridcell');
+
+          var isWeekend = (dow === 0 || dow === 6);
+          var isPast = date < tomorrow;
+          var isToday = isSameDay(date, today);
+          var isSelected = selectedDate && isSameDay(date, selectedDate);
+
+          if (isPast) {
+            cell.classList.add('disabled');
+            cell.setAttribute('aria-disabled', 'true');
+          } else {
+            if (isWeekend) cell.classList.add('weekend');
+            cell.setAttribute('data-date', dateToStr(date));
+            cell.addEventListener('click', onDayClick);
+          }
+
+          if (isToday) {
+            cell.classList.add('today');
+            cell.setAttribute('aria-current', 'date');
+          }
+
+          if (isSelected) {
+            cell.classList.add('selected');
+            cell.setAttribute('aria-selected', 'true');
+          }
+
+          grid.appendChild(cell);
+        }
+      }
+
+      function onDayClick(e) {
+        var dateStr = e.currentTarget.getAttribute('data-date');
+        if (!dateStr) return;
+
+        var parts = dateStr.split('-');
+        selectedDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+
+        // Update hidden input
+        hiddenInput.value = dateStr;
+
+        // Update trigger display
+        trigger.textContent = formatDisplay(selectedDate);
+        trigger.classList.remove('placeholder');
+
+        // Update hint
+        dateHint.textContent = 'Select your preferred date';
+        dateHint.classList.remove('error');
+
+        // Re-render to show selection
+        render();
+
+        // Close popover after short delay for visual feedback
+        setTimeout(function() {
+          closeCalendar();
+        }, 200);
+
+        // Update timezone display
+        if (typeof updateTimezone === 'function') {
+          updateTimezone();
+        }
+      }
+
+      // Navigation
+      prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        viewMonth--;
+        if (viewMonth < 0) {
+          viewMonth = 11;
+          viewYear--;
+        }
+        render();
+      });
+
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        viewMonth++;
+        if (viewMonth > 11) {
+          viewMonth = 0;
+          viewYear++;
+        }
+        render();
+      });
+
+      todayBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        viewMonth = today.getMonth();
+        viewYear = today.getFullYear();
+        render();
+      });
+
+      // Toggle on trigger click
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleCalendar();
+      });
+
+      // Open on Enter/Space when trigger is focused
+      trigger.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleCalendar();
+        } else if (e.key === 'Escape' && isOpen) {
+          closeCalendar();
+        }
+      });
+
+      // Close on backdrop click
+      backdrop.addEventListener('click', closeCalendar);
+
+      // Close on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isOpen) closeCalendar();
+      });
+
+      // Prevent clicks inside popover from closing
+      popover.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+
+      // Initial render
+      render();
+    })();
+
+    /* ========================================
+       6. TIMEZONE-SMART TIME PICKER
        ======================================== */
     (function() {
       var TIMEZONES = [
@@ -1627,12 +2166,24 @@
         }
       }
 
+      function formatDateForDisplay(dateStr) {
+        if (!dateStr) return '';
+        var parts = dateStr.split('-');
+        var d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      // Expose globally so date picker can call it
+      window.updateTimezone = updateTimezone;
+
       function updateTimezone() {
         document.getElementById('tzName').textContent = userTz;
         document.getElementById('tzAbbr').textContent = getTimezoneAbbr();
         document.getElementById('hiddenTimezone').value = userTz;
 
         var hasAntisocial = false;
+        var selectedDate = document.getElementById('preferred-date').value;
+        var dateDisplay = formatDateForDisplay(selectedDate);
 
         WINDOWS.forEach(function(w) {
           var localStart = formatTime(w.pstStart);
@@ -1660,8 +2211,12 @@
         if (selectedWindow) {
           var w = WINDOWS.find(function(win) { return win.name === selectedWindow.value; });
           if (w) {
-            document.getElementById('hiddenLocalTime').value =
-              w.label + ': ' + formatTime(w.pstStart) + ' \u2013 ' + formatTime(w.pstEnd) + ' (' + userTz + ')';
+            var localTimeVal = w.label + ': ' + formatTime(w.pstStart) + ' \u2013 ' + formatTime(w.pstEnd) + ' ' + getTimezoneAbbr();
+            if (dateDisplay) {
+              localTimeVal += ' on ' + dateDisplay;
+            }
+            localTimeVal += ' (' + userTz + ')';
+            document.getElementById('hiddenLocalTime').value = localTimeVal;
           }
         }
 
@@ -1677,7 +2232,7 @@
     })();
 
     /* ========================================
-       6. AJAX FORM SUBMISSION
+       7. AJAX FORM SUBMISSION
        ======================================== */
     (function() {
       var form = document.getElementById('bookingForm');
