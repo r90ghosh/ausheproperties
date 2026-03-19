@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Aushe Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 520px;
+    }
+
+    .error-code {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 700;
+      color: #c4a265;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+      font-weight: 500;
+      color: #ffffff;
+      margin-top: 1rem;
+    }
+
+    .message {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.875rem 2.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #c4a265;
+      text-decoration: none;
+      border: 1px solid rgba(196, 162, 101, 0.4);
+      border-radius: 8px;
+      background: rgba(196, 162, 101, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .btn:hover {
+      background: rgba(196, 162, 101, 0.18);
+      border-color: rgba(196, 162, 101, 0.7);
+      box-shadow: 0 0 24px rgba(196, 162, 101, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <h1 class="heading">Page Not Found</h1>
+    <p class="message">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/" class="btn">Return Home</a>
+  </div>
+</body>
+</html>

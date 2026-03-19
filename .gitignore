@@ -3,3 +3,6 @@ node_modules/
 .env
 *.log
 images/arlington-walkthrough.mp4
+
+# Local Netlify folder
+.netlify

@@ -3,28 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aushe Properties | Website Design Proposals</title>
+  <title>Aushe Properties | Modern Luxury Homes in Harare, Zimbabwe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Aushe Properties crafts modern luxury homes in Glen Lorne, Harare, Zimbabwe. 6 bespoke villas on 4,383 sqm lots. Expert consulting for diaspora investors.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aushe Properties | Modern Luxury Homes in Harare, Zimbabwe">
+  <meta property="og:description" content="Crafting modern luxury homes in Glen Lorne, Harare. 6 bespoke villas for discerning buyers and diaspora investors.">
+  <meta property="og:image" content="https://ausheproperties.netlify.app/images/villa-front-exterior.jpg">
+  <meta property="og:url" content="https://ausheproperties.netlify.app/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aushe Properties | Modern Luxury Homes in Harare, Zimbabwe">
+  <meta name="twitter:description" content="Crafting modern luxury homes in Glen Lorne, Harare. 6 bespoke villas for discerning buyers and diaspora investors.">
+  <meta name="twitter:image" content="https://ausheproperties.netlify.app/images/villa-front-exterior.jpg">
+  <link rel="canonical" href="https://ausheproperties.netlify.app/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text x='50' y='72' text-anchor='middle' font-family='serif' font-size='64' font-weight='bold' fill='%23c4a265'>A</text></svg>">
+  <link rel="preload" as="image" href="images/villa-front-exterior.jpg">
   <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
-      background: #0a0a0a;
+      background-color: #0a0a0a;
       color: #f5f5f0;
       font-family: 'Inter', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-      -webkit-font-smoothing: antialiased;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     ::selection {
@@ -32,146 +51,2413 @@
       color: #0a0a0a;
     }
 
-    .container {
-      max-width: 800px;
-      width: 100%;
-      text-align: center;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
-      color: #f5f5f0;
-    }
-
-    h1 span {
-      color: #c4a265;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: #9a9a9a;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 60px;
-      font-weight: 300;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-      margin-bottom: 80px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 48px 36px;
-      text-decoration: none;
+    a {
       color: inherit;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
       display: block;
     }
 
-    .card:hover {
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(196, 162, 101, 0.4);
-      transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4),
-                  0 0 0 1px rgba(196, 162, 101, 0.15);
+    /* ========================================
+       SCROLLBAR
+       ======================================== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #c4a265; border-radius: 3px; }
+
+    /* ========================================
+       DESIGN TOKENS
+       ======================================== */
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --bg-elevated: #222222;
+      --gold: #c4a265;
+      --gold-bright: #d4af37;
+      --emerald: #2d6a4f;
+      --text-primary: #f5f5f0;
+      --text-secondary: #9a9a9a;
+      --text-muted: #666666;
+      --border-subtle: rgba(255,255,255,0.06);
+      --glass-bg: rgba(255,255,255,0.05);
+      --glass-bg-hover: rgba(255,255,255,0.08);
+      --glass-border: rgba(255,255,255,0.1);
+      --glass-border-hover: rgba(255,255,255,0.2);
+      --font-display: 'Playfair Display', serif;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
     }
 
-    .card-label {
-      font-size: 0.72rem;
-      letter-spacing: 4px;
+    /* ========================================
+       UTILITY
+       ======================================== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 5px;
+      color: var(--gold);
       text-transform: uppercase;
-      color: #c4a265;
       margin-bottom: 16px;
+      display: block;
       font-weight: 500;
     }
 
-    .card h2 {
-      font-family: 'Playfair Display', serif;
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .gold { color: var(--gold); }
+
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========================================
+       GLASS BUTTON
+       ======================================== */
+    .glass-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 100px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .glass-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 100px;
+      opacity: 0;
+      background: radial-gradient(circle at center, rgba(196,162,101,0.25), transparent 70%);
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .glass-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(196,162,101,0.15);
+      filter: blur(8px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+    }
+
+    .glass-btn:hover {
+      border-color: rgba(196,162,101,0.4);
+      background: var(--glass-bg-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(196,162,101,0.1);
+    }
+
+    .glass-btn:hover::before {
+      opacity: 1;
+    }
+
+    .glass-btn:hover::after {
+      opacity: 1;
+      bottom: -10px;
+      width: 70%;
+    }
+
+    .glass-btn.primary {
+      background: linear-gradient(135deg, rgba(196,162,101,0.2), rgba(196,162,101,0.05));
+      border-color: rgba(196,162,101,0.3);
+    }
+
+    .glass-btn.primary:hover {
+      background: linear-gradient(135deg, rgba(196,162,101,0.3), rgba(196,162,101,0.1));
+      border-color: rgba(196,162,101,0.5);
+    }
+
+    .glass-btn.small {
+      padding: 10px 24px;
+      font-size: 0.82rem;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ========================================
+       HERO: IMAGE ACCORDION (Split Screen)
+       ======================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .hero-split {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      gap: 60px;
+    }
+
+    .hero-text {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+
+    .hero-label {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 8px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-weight: 500;
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 0.3s;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 0.5s;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.7;
+      max-width: 420px;
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 0.7s;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 0.9s;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Image Accordion */
+    .hero-accordion-wrap {
+      flex: 0 0 50%;
+      max-width: 50%;
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 0.6s;
+    }
+
+    .image-accordion {
+      display: flex;
+      height: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      gap: 4px;
+    }
+
+    .accordion-strip {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: width 700ms cubic-bezier(0.4, 0, 0.2, 1);
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .accordion-strip.active {
+      width: 400px;
+    }
+
+    .accordion-strip-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .accordion-strip:hover .accordion-strip-bg {
+      transform: scale(1.05);
+    }
+
+    .accordion-strip-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.15) 0%,
+        rgba(10, 10, 10, 0.3) 50%,
+        rgba(10, 10, 10, 0.75) 100%
+      );
+      transition: background 700ms ease;
+    }
+
+    .accordion-strip.active .accordion-strip-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.05) 0%,
+        rgba(10, 10, 10, 0.15) 50%,
+        rgba(10, 10, 10, 0.65) 100%
+      );
+    }
+
+    /* Caption styling */
+    .accordion-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      z-index: 2;
+      transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .accordion-caption-text {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      white-space: nowrap;
+      transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Collapsed state: rotated caption */
+    .accordion-strip:not(.active) .accordion-caption {
+      bottom: 20px;
+      left: 50%;
+      right: auto;
+      padding: 0;
+      transform: translateX(-50%);
+    }
+
+    .accordion-strip:not(.active) .accordion-caption-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+    /* Active state: horizontal caption */
+    .accordion-strip.active .accordion-caption {
+      padding: 24px;
+    }
+
+    .accordion-strip.active .accordion-caption-text {
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      opacity: 1;
+    }
+
+    /* Gold accent line under active caption */
+    .accordion-caption-line {
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      margin-top: 8px;
+      transition: width 700ms cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+    }
+
+    .accordion-strip.active .accordion-caption-line {
+      width: 40px;
+    }
+
+    /* Strip number indicator */
+    .accordion-strip-num {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 400ms ease;
+      z-index: 2;
+    }
+
+    .accordion-strip:not(.active) .accordion-strip-num {
+      opacity: 0.5;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: heroFadeIn 1s ease forwards 1.2s;
+    }
+
+    .scroll-indicator span {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.3; transform: scaleY(0.6); }
+    }
+
+    /* ========================================
+       SECTION 2: PROPERTY SHOWCASE
+       (Container Scroll Animation)
+       ======================================== */
+    .showcase {
+      padding: 120px 0 160px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .showcase-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .showcase-header .section-title .gold-line {
+      display: block;
+      color: var(--gold);
+    }
+
+    .showcase-header .section-desc {
+      margin: 0 auto;
+    }
+
+    /* Scroll container with perspective */
+    .scroll-perspective {
+      perspective: 1000px;
+      perspective-origin: center center;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .scroll-card {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #6C6C6C;
+      background: var(--bg-elevated);
+      transform: rotateX(20deg) scale(0.9);
+      transition: transform 0.1s linear;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+      will-change: transform;
+    }
+
+    /* Browser-like header bar */
+    .scroll-card-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      background: #1a1a1a;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .scroll-card-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #333;
+    }
+
+    .scroll-card-dot:nth-child(1) { background: #ff5f56; }
+    .scroll-card-dot:nth-child(2) { background: #ffbd2e; }
+    .scroll-card-dot:nth-child(3) { background: #27ca40; }
+
+    .scroll-card-url {
+      flex: 1;
+      margin-left: 12px;
+      padding: 6px 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+    }
+
+    /* Villa grid inside the card */
+    .scroll-card-body {
+      padding: 32px;
+    }
+
+    .scroll-card-title {
+      font-family: var(--font-display);
       font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .scroll-card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+    }
+
+    .villa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .villa-mini {
+      background: #1a1a1a;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .villa-mini:hover {
+      border-color: rgba(196,162,101,0.3);
+    }
+
+    .villa-mini-img {
+      height: 120px;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .villa-mini-img svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.15;
+    }
+
+    .villa-mini-info {
+      padding: 14px 16px;
+    }
+
+    .villa-mini-name {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .villa-mini-specs {
+      display: flex;
+      gap: 12px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .villa-mini-specs span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ========================================
+       SECTION 3: WHY AUSHE
+       ======================================== */
+    .why-section {
+      background: linear-gradient(180deg, var(--bg-dark), #0e0e0e);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .why-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .why-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .why-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(196,162,101,0.1);
+      border: 1px solid rgba(196,162,101,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .why-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .why-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 12px;
     }
 
-    .card p {
-      font-size: 0.92rem;
-      color: #9a9a9a;
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
       line-height: 1.7;
     }
 
-    .card-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 24px;
-      font-size: 0.85rem;
-      color: #c4a265;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: gap 0.3s ease;
+    .why-cta {
+      text-align: center;
+      margin-top: 60px;
     }
 
-    .card:hover .card-arrow {
+    /* ========================================
+       ABOUT SECTION
+       ======================================== */
+    .about-section {
+      background: linear-gradient(180deg, #0e0e0e, var(--bg-dark));
+    }
+    .about-split {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 540px;
+    }
+    .about-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .about-image {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Video Lightbox */
+    .video-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+    .video-lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .video-lightbox-inner {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+    }
+    .video-lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    .video-lightbox-close:hover {
+      color: var(--gold);
+    }
+
+    /* ========================================
+       SECTION 4: VILLA HIGHLIGHTS
+       ======================================== */
+    .villas-section {
+      background: var(--bg-dark);
+    }
+
+    .villa-highlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .villa-highlight:last-child {
+      margin-bottom: 0;
+    }
+
+    .villa-highlight.reverse {
+      direction: rtl;
+    }
+
+    .villa-highlight.reverse > * {
+      direction: ltr;
+    }
+
+    .villa-image {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1a1a1a, #252525);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .villa-image-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .villa-image-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .villa-image-badge {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 6px 16px;
+      background: rgba(196,162,101,0.15);
+      border: 1px solid rgba(196,162,101,0.3);
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 2;
+    }
+
+    .villa-details .section-label {
+      margin-bottom: 12px;
+    }
+
+    .villa-details h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .villa-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .villa-specs {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .villa-spec {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .villa-spec svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .villa-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    /* ========================================
+       LOCATION SECTION
+       ======================================== */
+    .location-section {
+      background: linear-gradient(180deg, var(--bg-dark), #0e0e0e);
+      position: relative;
+    }
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .location-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .location-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      transform: translateY(-6px);
+    }
+    .location-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(196,162,101,0.1);
+      border: 1px solid rgba(196,162,101,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .location-card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .location-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .location-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       LEAD MAGNET
+       ======================================== */
+    .lead-magnet {
+      padding: 60px 0;
+      background: linear-gradient(135deg, rgba(196,162,101,0.08), rgba(196,162,101,0.02));
+      border-top: 1px solid rgba(196,162,101,0.15);
+      border-bottom: 1px solid rgba(196,162,101,0.15);
+    }
+    .lead-magnet-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .lead-magnet-text {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+    .lead-magnet-text h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .lead-magnet-text p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       SECTION 5: CONSULTING / PRICING
+       (Glassy Pricing Component)
+       ======================================== */
+    .pricing-section {
+      position: relative;
+      padding: 140px 0;
+      overflow: hidden;
+    }
+
+    /* Animated gradient background */
+    .pricing-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(
+        45deg,
+        #0a0a0a 0%,
+        #1a0f0a 15%,
+        #0a1a0f 30%,
+        #0a0a1a 45%,
+        #1a0a15 60%,
+        #0f1a0a 75%,
+        #0a0a0a 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 0%; }
+      25% { background-position: 100% 0%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .pricing-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 72px;
+    }
+
+    .pricing-header .section-title {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-bright) 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .pricing-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 40px 32px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pricing-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.14);
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+
+    .pricing-card.popular {
+      border-color: rgba(196,162,101,0.3);
+      background: rgba(196,162,101,0.05);
+    }
+
+    .pricing-card.popular:hover {
+      border-color: rgba(196,162,101,0.5);
+    }
+
+    .pricing-popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #0a0a0a;
+      white-space: nowrap;
+    }
+
+    .pricing-card-name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .pricing-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 32px;
+    }
+
+    .pricing-amount {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .pricing-period {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
       gap: 14px;
     }
 
-    .footer {
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .pricing-features li svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+      margin-top: 2px;
+    }
+
+    .pricing-card .glass-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ========================================
+       SECTION 6: CONTACT
+       ======================================== */
+    .contact-section {
+      background: #0e0e0e;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .contact-item {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+    }
+
+    .contact-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(196,162,101,0.1);
+      border: 1px solid rgba(196,162,101,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .contact-item-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-item-label {
+      font-family: var(--font-heading);
       font-size: 0.78rem;
-      color: #666;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-item-value {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .contact-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .contact-socials {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      border-color: rgba(196,162,101,0.4);
+      background: rgba(196,162,101,0.1);
+      transform: translateY(-3px);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-secondary);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .social-link:hover svg {
+      stroke: var(--gold);
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-dark);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       HAMBURGER MENU
+       ======================================== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    .mobile-menu-close:hover {
+      color: var(--gold);
+    }
+    .mobile-menu-links {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .mobile-menu-links a {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    .mobile-menu-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1024px) {
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .villa-highlight { gap: 48px; }
+
+      .hero-split { gap: 40px; }
+      .hero-text { flex: 0 0 48%; max-width: 48%; }
+      .hero-accordion-wrap { flex: 0 0 48%; max-width: 48%; }
+      .accordion-strip.active { width: 280px; }
+      .accordion-strip:not(.active) { width: 50px; }
+      .image-accordion { height: 380px; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .location-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .section { padding: 80px 0; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-split {
+        flex-direction: column;
+        padding: 120px 24px 80px;
+        gap: 40px;
+      }
+
+      .hero-text {
+        flex: none;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hero-ctas { justify-content: center; }
+
+      .hero-sub { max-width: 100%; }
+
+      .hero-accordion-wrap {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .image-accordion { height: 320px; }
+      .accordion-strip.active { width: 200px; }
+      .accordion-strip:not(.active) { width: 40px; }
+
+      .villa-highlight {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .villa-highlight.reverse { direction: ltr; }
+
+      .villa-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .why-grid { grid-template-columns: 1fr; }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .hero-title {
+        font-size: clamp(2.4rem, 10vw, 4rem);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .location-grid { grid-template-columns: 1fr; }
+
+      .lead-magnet-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .lead-magnet-text {
+        flex-direction: column;
+      }
     }
 
     @media (max-width: 480px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 36px 28px;
-      }
+      .villa-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .contact-ctas { flex-direction: column; align-items: center; }
+      .image-accordion { height: 280px; gap: 3px; }
+      .accordion-strip.active { width: 160px; }
+      .accordion-strip:not(.active) { width: 30px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>AUSHE<span>.</span> PROPERTIES</h1>
-    <p class="subtitle">Website Design Proposals</p>
 
-    <div class="cards">
-      <a href="proposals/proposal-f-v3-scroll-expand.html" class="card">
-        <div class="card-label">Proposal F-v3</div>
-        <h2>Scroll Expansion</h2>
-        <p>Video expands as you scroll, text splits apart. An immersive, cinematic entrance that draws visitors deeper into the experience.</p>
-        <div class="card-arrow">
-          View Proposal
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">AUSHE<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#showcase">Villas</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#villas">Gallery</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#pricing">Consulting</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn small">Book Call</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
 
-      <a href="proposals/proposal-f-v4-accordion.html" class="card">
-        <div class="card-label">Proposal F-v4</div>
-        <h2>Image Accordion</h2>
-        <p>Hover to explore property images in an interactive accordion. A split-screen hero that balances content with visual impact.</p>
-        <div class="card-arrow">
-          View Proposal
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      <!-- Mobile menu overlay -->
+      <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <ul class="mobile-menu-links">
+          <li><a href="#showcase">Villas</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#villas">Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#pricing">Consulting</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn primary small">Book Free Call</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== SECTION 1: HERO (Image Accordion — Split Screen) ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-split">
+      <!-- Left: Text Content -->
+      <div class="hero-text">
+        <p class="hero-label">Luxury Real Estate</p>
+        <h1 class="hero-title">AUSHE PROPERTIES</h1>
+        <p class="hero-sub">Crafting Modern Luxury Homes in Harare, Zimbabwe</p>
+        <div class="hero-ctas">
+          <a href="#showcase" class="glass-btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            Explore Villas
+          </a>
+          <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Book Consultation
+          </a>
         </div>
-      </a>
+      </div>
+
+      <!-- Right: Image Accordion -->
+      <div class="hero-accordion-wrap">
+        <div class="image-accordion" id="imageAccordion">
+          <!-- Strip 1 -->
+          <div class="accordion-strip active" data-index="0">
+            <div class="accordion-strip-bg" style="background-image: url('images/villa-front-exterior.jpg');"></div>
+            <div class="accordion-strip-overlay"></div>
+            <span class="accordion-strip-num">01</span>
+            <div class="accordion-caption">
+              <span class="accordion-caption-text">Villa Exterior</span>
+              <span class="accordion-caption-line"></span>
+            </div>
+          </div>
+          <!-- Strip 2 -->
+          <div class="accordion-strip" data-index="1">
+            <div class="accordion-strip-bg" style="background-image: url('images/villa-front-moody.jpg');"></div>
+            <div class="accordion-strip-overlay"></div>
+            <span class="accordion-strip-num">02</span>
+            <div class="accordion-caption">
+              <span class="accordion-caption-text">Modern Design</span>
+              <span class="accordion-caption-line"></span>
+            </div>
+          </div>
+          <!-- Strip 3 -->
+          <div class="accordion-strip" data-index="2">
+            <div class="accordion-strip-bg" style="background-image: url('images/interior-closet-chandelier.jpg');"></div>
+            <div class="accordion-strip-overlay"></div>
+            <span class="accordion-strip-num">03</span>
+            <div class="accordion-caption">
+              <span class="accordion-caption-text">Luxury Interior</span>
+              <span class="accordion-caption-line"></span>
+            </div>
+          </div>
+          <!-- Strip 4 -->
+          <div class="accordion-strip" data-index="3">
+            <div class="accordion-strip-bg" style="background-image: url('images/interior-wine-bar.jpeg');"></div>
+            <div class="accordion-strip-overlay"></div>
+            <span class="accordion-strip-num">04</span>
+            <div class="accordion-caption">
+              <span class="accordion-caption-text">Wine Bar</span>
+              <span class="accordion-caption-line"></span>
+            </div>
+          </div>
+          <!-- Strip 5 -->
+          <div class="accordion-strip" data-index="4">
+            <div class="accordion-strip-bg" style="background-image: url('images/villa-garden-view.jpg');"></div>
+            <div class="accordion-strip-overlay"></div>
+            <span class="accordion-strip-num">05</span>
+            <div class="accordion-caption">
+              <span class="accordion-caption-text">Garden View</span>
+              <span class="accordion-caption-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <p class="footer">Presented by Ashirbad for Aubrey | 2024</p>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 2: PROPERTY SHOWCASE (Scroll Animation) ========== -->
+  <section class="showcase section" id="showcase">
+    <div class="container">
+      <div class="showcase-header fade-up">
+        <span class="section-label">Our Development</span>
+        <h2 class="section-title">
+          Glen Lorne
+          <span class="gold-line">Luxury Villas</span>
+        </h2>
+        <p class="section-desc">6 bespoke villas on 4,383 sqm lots in Harare's most sought-after neighborhood</p>
+      </div>
+
+      <div class="scroll-perspective" id="scrollPerspective">
+        <div class="scroll-card" id="scrollCard">
+          <div class="scroll-card-bar">
+            <div class="scroll-card-dot"></div>
+            <div class="scroll-card-dot"></div>
+            <div class="scroll-card-dot"></div>
+            <div class="scroll-card-url">ausheproperties.com/glen-lorne</div>
+          </div>
+          <div class="scroll-card-body">
+            <h3 class="scroll-card-title">Glen Lorne Estate</h3>
+            <p class="scroll-card-subtitle">6 Premium Residences | 4,383 sqm per stand</p>
+            <div class="villa-grid">
+              <!-- Villa 1 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-front-exterior.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 1</div>
+                  <div class="villa-mini-specs">
+                    <span>4 Bed</span>
+                    <span>6 Bath</span>
+                    <span>552 sqm</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Villa 2 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-aerial-pool.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 2</div>
+                  <div class="villa-mini-specs">
+                    <span>4 Bed</span>
+                    <span>6 Bath</span>
+                    <span>596 sqm</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Villa 3 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-front-moody.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 3</div>
+                  <div class="villa-mini-specs">
+                    <span>3 Bed</span>
+                    <span>4 Bath</span>
+                    <span>424 sqm</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Villa 4 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-garden-view.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 4</div>
+                  <div class="villa-mini-specs">
+                    <span>4 Bed</span>
+                    <span>6 Bath</span>
+                    <span>648 sqm</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Villa 5 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-aerial-alt.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 5</div>
+                  <div class="villa-mini-specs">
+                    <span>4 Bed</span>
+                    <span>6 Bath</span>
+                    <span>637 sqm</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Villa 6 -->
+              <div class="villa-mini">
+                <div class="villa-mini-img" style="background-image: url('images/villa-sketch-render.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="villa-mini-info">
+                  <div class="villa-mini-name">Unit 6</div>
+                  <div class="villa-mini-specs">
+                    <span>4 Bed</span>
+                    <span>6 Bath</span>
+                    <span>648 sqm</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 3: WHY AUSHE ========== -->
+  <section class="section why-section" id="why">
+    <div class="container">
+      <div class="fade-up" style="text-align: center;">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title">The Aushe <span class="gold">Difference</span></h2>
+        <p class="section-desc" style="margin: 0 auto;">Every detail is intentional. Every material, premium. Every home, a legacy.</p>
+      </div>
+
+      <div class="why-grid">
+        <!-- Card 1: Quality -->
+        <div class="why-card fade-up">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Quality Craftsmanship</h3>
+          <p>Precision engineering meets artisanal finish. We source premium materials and partner with master builders who share our obsession with perfection.</p>
+        </div>
+        <!-- Card 2: Sustainable -->
+        <div class="why-card fade-up" style="transition-delay: 0.1s;">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Sustainable Design</h3>
+          <p>Our homes integrate solar readiness, rainwater harvesting, and natural ventilation. Luxury living that respects Zimbabwe's beautiful landscape.</p>
+        </div>
+        <!-- Card 3: Community -->
+        <div class="why-card fade-up" style="transition-delay: 0.2s;">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Community Integration</h3>
+          <p>Glen Lorne is not just a location — it's a lifestyle. Gated security, manicured communal spaces, and neighbors who value privacy and prestige.</p>
+        </div>
+        <!-- Card 4: Personalized -->
+        <div class="why-card fade-up" style="transition-delay: 0.3s;">
+          <div class="why-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Personalized Experience</h3>
+          <p>From your first consultation to key handover, you work directly with our team. Customize finishes, layouts, and smart home features to your taste.</p>
+        </div>
+      </div>
+
+      <div class="why-cta fade-up">
+        <a href="#contact" class="glass-btn primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT / OUR STORY ========== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-split fade-up">
+        <div class="about-text">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title">Where Luxury Meets<br><em class="gold">Perfection</em></h2>
+          <p class="about-desc">At Aushe Properties, we are committed to crafting more than just houses — we build homes. As your trusted partner in real estate development, we combine exceptional design, sustainable practices, and the highest standards of craftsmanship.</p>
+          <p class="about-desc">Founded in 2024, we specialize in helping Zimbabweans abroad invest back home with confidence. From land acquisition to key handover, we guide every step — so you can build your legacy from anywhere in the world.</p>
+          <div class="about-ctas">
+            <a href="https://substack.com/@ausheproperties/posts" target="_blank" rel="noopener noreferrer" class="glass-btn primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              Read Our Insights
+            </a>
+            <button class="glass-btn" id="videoTourBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Virtual Tour
+            </button>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="images/interior-closet-chandelier-wide.jpg" alt="Aushe Properties luxury interior" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Lightbox -->
+  <div class="video-lightbox" id="videoLightbox">
+    <div class="video-lightbox-inner">
+      <button class="video-lightbox-close" id="videoLightboxClose">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <video id="tourVideo" controls preload="none" style="width:100%;max-height:80vh;border-radius:12px;">
+        <source src="images/arlington-web.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
+
+  <!-- ========== SECTION 4: VILLA HIGHLIGHTS ========== -->
+  <section class="section villas-section" id="villas">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 80px;" class="fade-up">
+        <span class="section-label">Featured Residences</span>
+        <h2 class="section-title">Signature <span class="gold">Villas</span></h2>
+      </div>
+
+      <!-- Villa 1 -->
+      <div class="villa-highlight fade-up">
+        <div class="villa-image">
+          <div class="villa-image-inner">
+            <img src="images/villa-front-exterior.jpg" alt="Aushe Properties Villa 1 - Front Exterior" loading="lazy">
+          </div>
+          <div class="villa-image-badge">Featured</div>
+        </div>
+        <div class="villa-details">
+          <span class="section-label">Unit 1</span>
+          <h3>The Grand Residence</h3>
+          <p class="villa-tagline">"Modern, luxurious, functional, sleek and stunning"</p>
+          <div class="villa-specs">
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/><path d="M2 7h20v-2a2 2 0 00-2-2H4a2 2 0 00-2 2v2z"/></svg>
+              4 Bedrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/><path d="M4 21v-1"/><path d="M20 21v-1"/></svg>
+              6 Bathrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              552 sqm
+            </div>
+          </div>
+          <p class="villa-desc">The crown jewel of Glen Lorne Estate. Expansive living areas flow seamlessly into private courtyards. Double-volume ceilings, imported stone finishes, and a master suite that redefines indulgence.</p>
+          <a href="#contact" class="glass-btn primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Inquire
+          </a>
+        </div>
+      </div>
+
+      <!-- Villa 4 -->
+      <div class="villa-highlight reverse fade-up">
+        <div class="villa-image">
+          <div class="villa-image-inner">
+            <img src="images/villa-aerial-pool.jpg" alt="Aushe Properties Villa 4 - Aerial View with Pool" loading="lazy">
+          </div>
+          <div class="villa-image-badge">Premium</div>
+        </div>
+        <div class="villa-details">
+          <span class="section-label">Unit 4</span>
+          <h3>The Serene Estate</h3>
+          <p class="villa-tagline">"Modern, Stylish, Elegant and Serene"</p>
+          <div class="villa-specs">
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/><path d="M2 7h20v-2a2 2 0 00-2-2H4a2 2 0 00-2 2v2z"/></svg>
+              4 Bedrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/><path d="M4 21v-1"/><path d="M20 21v-1"/></svg>
+              6 Bathrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              648 sqm
+            </div>
+          </div>
+          <p class="villa-desc">The largest villa in the estate. A sanctuary of calm with expansive garden views from every room. The open-plan kitchen and entertainment deck are designed for those who love to host.</p>
+          <a href="#contact" class="glass-btn primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Inquire
+          </a>
+        </div>
+      </div>
+
+      <!-- Villa 3 -->
+      <div class="villa-highlight fade-up">
+        <div class="villa-image">
+          <div class="villa-image-inner">
+            <img src="images/villa-front-moody.jpg" alt="Aushe Properties Villa 3 - Contemporary Design" loading="lazy">
+          </div>
+          <div class="villa-image-badge">Modern</div>
+        </div>
+        <div class="villa-details">
+          <span class="section-label">Unit 3</span>
+          <h3>The Bold Contemporary</h3>
+          <p class="villa-tagline">"Contemporary luxury, bold architectural design"</p>
+          <div class="villa-specs">
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M3 7v11a2 2 0 002 2h14a2 2 0 002-2V7"/><path d="M2 7h20v-2a2 2 0 00-2-2H4a2 2 0 00-2 2v2z"/></svg>
+              3 Bedrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 011 1v3a4 4 0 01-4 4H7a4 4 0 01-4-4v-3a1 1 0 011-1z"/><path d="M6 12V5a2 2 0 012-2h3v2.25"/><path d="M4 21v-1"/><path d="M20 21v-1"/></svg>
+              4 Bathrooms
+            </div>
+            <div class="villa-spec">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              424 sqm
+            </div>
+          </div>
+          <p class="villa-desc">For the design-forward buyer. Angular lines, floor-to-ceiling glass, and an architectural language that makes a statement. Compact luxury without compromise.</p>
+          <a href="#contact" class="glass-btn primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Inquire
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCATION ========== -->
+  <section class="section location-section" id="location">
+    <div class="container">
+      <div class="fade-up" style="text-align: center; margin-bottom: 64px;">
+        <span class="section-label">Location</span>
+        <h2 class="section-title">Glen Lorne, <em class="gold">Harare</em></h2>
+        <p class="section-desc" style="margin: 0 auto;">Cnr Hunters Moon &amp; E.D Mnangagwa Rd, Glen Lorne — 30 minutes from Harare city centre</p>
+      </div>
+
+      <div class="location-grid fade-up">
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4>Glen Lorne Medical Centre</h4>
+          <p>10 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <h4>Highlands Park Mall</h4>
+          <p>15 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+          </div>
+          <h4>Wombles Restaurant</h4>
+          <p>15 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Mukuvisi Woodlands</h4>
+          <p>30 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <h4>Sam Levy Shopping Mall</h4>
+          <p>25 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h4>Gletwyn Dam</h4>
+          <p>10 min drive</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LEAD MAGNET ========== -->
+  <section class="lead-magnet">
+    <div class="container">
+      <div class="lead-magnet-inner fade-up">
+        <div class="lead-magnet-text">
+          <span class="lead-magnet-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </span>
+          <div>
+            <h3>Free Guide: Land Buying Tips for Zimbabwe</h3>
+            <p>Everything you need to know before purchasing land — from title deeds to due diligence.</p>
+          </div>
+        </div>
+        <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn primary">
+          Download Free Guide
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 5: CONSULTING / PRICING (Glassy Pricing) ========== -->
+  <section class="pricing-section" id="pricing">
+    <div class="pricing-bg"></div>
+    <div class="container">
+      <div class="pricing-header fade-up">
+        <span class="section-label">Investment Advisory</span>
+        <h2 class="section-title">Your Investment Journey<br>Starts Here</h2>
+        <p class="section-desc" style="margin: 16px auto 0; color: var(--text-secondary);">Expert guidance for diaspora investors looking to build wealth through Zimbabwean real estate.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Discovery Call -->
+        <div class="pricing-card fade-up">
+          <div class="pricing-card-name">Discovery Call</div>
+          <div class="pricing-card-desc">Your first step toward property ownership in Zimbabwe.</div>
+          <div class="pricing-price">
+            <span class="pricing-amount">Free</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              30-minute 1:1 consultation
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Personalized property guidance
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Location strategy overview
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              No obligation, no pressure
+            </li>
+          </ul>
+          <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn">Book Free Call</a>
+        </div>
+
+        <!-- Private Session -->
+        <div class="pricing-card fade-up" style="transition-delay: 0.1s;">
+          <div class="pricing-card-name">Private Session</div>
+          <div class="pricing-card-desc">A deep dive into your investment strategy and options.</div>
+          <div class="pricing-price">
+            <span class="pricing-amount">$50</span>
+            <span class="pricing-period">/ session</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              60-minute deep dive session
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Title deed verification guidance
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Trusted contractor referrals
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Budget planning & cost analysis
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Follow-up email summary
+            </li>
+          </ul>
+          <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn primary">Book Session</a>
+        </div>
+
+        <!-- VIP Club -->
+        <div class="pricing-card popular fade-up" style="transition-delay: 0.2s;">
+          <div class="pricing-popular-badge">Most Popular</div>
+          <div class="pricing-card-name">VIP Club</div>
+          <div class="pricing-card-desc">Ongoing mentorship for serious investors building portfolios.</div>
+          <div class="pricing-price">
+            <span class="pricing-amount">$9.99</span>
+            <span class="pricing-period">/ month</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Weekly group coaching calls
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Exclusive group chat access
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Daily real estate tips & insights
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Priority access to new listings
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Members-only property discounts
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+              Direct line to Aubrey
+            </li>
+          </ul>
+          <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn primary">Join VIP Club</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SECTION 6: CONTACT ========== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-header fade-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Ready to Build Your<br><span class="gold">Dream Home?</span></h2>
+        <p class="section-desc" style="margin: 0 auto;">Whether you're in the diaspora or right here in Harare, we're ready to guide your journey home.</p>
+      </div>
+
+      <div class="contact-grid fade-up">
+        <!-- WhatsApp -->
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </div>
+          <div class="contact-item-label">WhatsApp</div>
+          <div class="contact-item-value">+1 (317) 600-1877</div>
+        </div>
+        <!-- Zimbabwe -->
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-item-label">Zimbabwe</div>
+          <div class="contact-item-value">+263 783 378 177</div>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">aushe.llc@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="contact-ctas fade-up">
+        <a href="https://wa.me/13176001877" target="_blank" class="glass-btn primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          WhatsApp Us
+        </a>
+        <a href="mailto:aushe.llc@gmail.com" class="glass-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          Send Email
+        </a>
+        <a href="https://stan.store/ausheproperties" target="_blank" rel="noopener noreferrer" class="glass-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book Free Call
+        </a>
+      </div>
+
+      <div class="contact-socials fade-up">
+        <a href="https://www.instagram.com/ausheproperties/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/ausheproperties" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://substack.com/@ausheproperties/posts" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Substack">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 4h16v2H4zm0 4h16v8l-8-4-8 4z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@ausheproperties" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#" class="footer-logo">AUSHE<span>.</span></a>
+      <ul class="footer-links">
+        <li><a href="#showcase">Villas</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#pricing">Consulting</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2024 Aushe Properties LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    /* ========================================
+       1. IMAGE ACCORDION (Hero)
+       ======================================== */
+    (function() {
+      var accordion = document.getElementById('imageAccordion');
+      var strips = accordion.querySelectorAll('.accordion-strip');
+
+      strips.forEach(function(strip) {
+        strip.addEventListener('mouseenter', function() {
+          strips.forEach(function(s) {
+            s.classList.remove('active');
+          });
+          strip.classList.add('active');
+        });
+      });
+
+      var autoInterval;
+      var currentIndex = 0;
+
+      function autoAdvance() {
+        currentIndex = (currentIndex + 1) % strips.length;
+        strips.forEach(function(s) { s.classList.remove('active'); });
+        strips[currentIndex].classList.add('active');
+      }
+
+      function startAuto() {
+        autoInterval = setInterval(autoAdvance, 3500);
+      }
+
+      function stopAuto() {
+        clearInterval(autoInterval);
+      }
+
+      startAuto();
+
+      accordion.addEventListener('mouseenter', function() {
+        stopAuto();
+      });
+
+      accordion.addEventListener('mouseleave', function() {
+        currentIndex = Array.from(strips).findIndex(function(s) {
+          return s.classList.contains('active');
+        });
+        startAuto();
+      });
+    })();
+
+    /* ========================================
+       2. CONTAINER SCROLL ANIMATION
+       ======================================== */
+    (function() {
+      var card = document.getElementById('scrollCard');
+      var perspective = document.getElementById('scrollPerspective');
+
+      function updateCardTransform() {
+        var rect = perspective.getBoundingClientRect();
+        var windowH = window.innerHeight;
+
+        var start = windowH;
+        var end = -rect.height * 0.3;
+
+        var progress = 1 - Math.max(0, Math.min(1, (rect.top - end) / (start - end)));
+
+        var eased = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        var rotateX = 20 * (1 - eased);
+        var scale = 0.9 + 0.1 * eased;
+        var translateY = 40 * (1 - eased);
+
+        card.style.transform = 'rotateX(' + rotateX + 'deg) scale(' + scale + ') translateY(' + translateY + 'px)';
+      }
+
+      window.addEventListener('scroll', updateCardTransform, { passive: true });
+      updateCardTransform();
+    })();
+
+    /* ========================================
+       3. NAVIGATION SCROLL STATE
+       ======================================== */
+    (function() {
+      var nav = document.getElementById('nav');
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+      }, { passive: true });
+    })();
+
+    /* ========================================
+       4. INTERSECTION OBSERVER — Fade-up animations
+       ======================================== */
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.fade-up').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ========================================
+       5. SMOOTH SCROLL for anchor links
+       ======================================== */
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    /* ========================================
+       6. MOBILE MENU
+       ======================================== */
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var menu = document.getElementById('mobileMenu');
+      var closeBtn = document.getElementById('mobileMenuClose');
+
+      function openMenu() {
+        menu.classList.add('open');
+        hamburger.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menu.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function() {
+        menu.classList.contains('open') ? closeMenu() : openMenu();
+      });
+
+      closeBtn.addEventListener('click', closeMenu);
+
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+
+    /* ========================================
+       7. VIDEO LIGHTBOX
+       ======================================== */
+    (function() {
+      var btn = document.getElementById('videoTourBtn');
+      var lightbox = document.getElementById('videoLightbox');
+      var closeBtn = document.getElementById('videoLightboxClose');
+      var video = document.getElementById('tourVideo');
+
+      btn.addEventListener('click', function() {
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+        video.pause();
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
