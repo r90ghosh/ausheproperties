@@ -19,7 +19,7 @@
   <meta name="twitter:image" content="https://ausheproperties.netlify.app/images/villa-front-exterior.jpg">
   <link rel="canonical" href="https://ausheproperties.netlify.app/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text x='50' y='72' text-anchor='middle' font-family='serif' font-size='64' font-weight='bold' fill='%23c4a265'>A</text></svg>">
-  <link rel="preload" as="image" href="images/villa-front-exterior.jpg">
+  <link rel="preload" as="image" href="images/villas/unit1-front.jpg">
   <style>
     /* ========================================
        RESET & BASE
@@ -696,6 +696,14 @@
       display: flex;
       align-items: center;
       gap: 4px;
+    }
+
+    .villa-mini-tagline {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 2px;
+      line-height: 1.3;
     }
 
     /* ========================================
@@ -1633,7 +1641,7 @@
         <div class="image-accordion" id="imageAccordion">
           <!-- Strip 1 -->
           <div class="accordion-strip active" data-index="0">
-            <div class="accordion-strip-bg" style="background-image: url('images/villa-front-exterior.jpg');"></div>
+            <div class="accordion-strip-bg" style="background-image: url('images/villas/unit1-front.jpg');"></div>
             <div class="accordion-strip-overlay"></div>
             <span class="accordion-strip-num">01</span>
             <div class="accordion-caption">
@@ -1717,10 +1725,11 @@
             <div class="villa-grid">
               <!-- Villa 1 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-front-exterior.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit1-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 1</div>
+                  <div class="villa-mini-tagline">Modern, luxurious, functional, sleek and stunning</div>
                   <div class="villa-mini-specs">
                     <span>4 Bed</span>
                     <span>6 Bath</span>
@@ -1730,10 +1739,11 @@
               </div>
               <!-- Villa 2 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-aerial-pool.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit2-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 2</div>
+                  <div class="villa-mini-tagline">Modern sophistication, unparalleled comfort</div>
                   <div class="villa-mini-specs">
                     <span>4 Bed</span>
                     <span>6 Bath</span>
@@ -1743,10 +1753,11 @@
               </div>
               <!-- Villa 3 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-front-moody.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit3-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 3</div>
+                  <div class="villa-mini-tagline">Contemporary luxury, bold architectural design</div>
                   <div class="villa-mini-specs">
                     <span>3 Bed</span>
                     <span>4 Bath</span>
@@ -1756,10 +1767,11 @@
               </div>
               <!-- Villa 4 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-garden-view.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit4-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 4</div>
+                  <div class="villa-mini-tagline">Modern, Stylish, Elegant and Serene</div>
                   <div class="villa-mini-specs">
                     <span>4 Bed</span>
                     <span>6 Bath</span>
@@ -1769,10 +1781,11 @@
               </div>
               <!-- Villa 5 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-aerial-alt.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit5-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 5</div>
+                  <div class="villa-mini-tagline">Modern Elegance, Perfectly Designed</div>
                   <div class="villa-mini-specs">
                     <span>4 Bed</span>
                     <span>6 Bath</span>
@@ -1782,10 +1795,11 @@
               </div>
               <!-- Villa 6 -->
               <div class="villa-mini">
-                <div class="villa-mini-img" style="background-image: url('images/villa-sketch-render.jpg'); background-size: cover; background-position: center;">
+                <div class="villa-mini-img" style="background-image: url('images/villas/unit6-front.jpg'); background-size: cover; background-position: center;">
                 </div>
                 <div class="villa-mini-info">
                   <div class="villa-mini-name">Unit 6</div>
+                  <div class="villa-mini-tagline">Modern Elegance, Perfectly Designed</div>
                   <div class="villa-mini-specs">
                     <span>4 Bed</span>
                     <span>6 Bath</span>
@@ -1816,7 +1830,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
           <h3>Quality Craftsmanship</h3>
-          <p>Precision engineering meets artisanal finish. We source premium materials and partner with master builders who share our obsession with perfection.</p>
+          <p>Each finishing touch is hand-picked to ensure our high design standards are met. We use precision manufacturing techniques and premium materials for durability, beauty, and timeless appeal.</p>
         </div>
         <!-- Card 2: Sustainable -->
         <div class="why-card fade-up" style="transition-delay: 0.1s;">
@@ -1824,7 +1838,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
           <h3>Sustainable Design</h3>
-          <p>Our homes integrate solar readiness, rainwater harvesting, and natural ventilation. Luxury living that respects Zimbabwe's beautiful landscape.</p>
+          <p>Where possible, we use sustainable products and eco-friendly materials. Our construction techniques reduce waste impact on the environment while maintaining superior quality.</p>
         </div>
         <!-- Card 3: Community -->
         <div class="why-card fade-up" style="transition-delay: 0.2s;">
@@ -1832,7 +1846,7 @@
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>Community Integration</h3>
-          <p>Glen Lorne is not just a location — it's a lifestyle. Gated security, manicured communal spaces, and neighbors who value privacy and prestige.</p>
+          <p>We contribute to the local community by employing local tradesmen and investing within the neighbourhood. Each development seamlessly integrates with its surroundings.</p>
         </div>
         <!-- Card 4: Personalized -->
         <div class="why-card fade-up" style="transition-delay: 0.3s;">
@@ -1840,7 +1854,7 @@
             <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </div>
           <h3>Personalized Experience</h3>
-          <p>From your first consultation to key handover, you work directly with our team. Customize finishes, layouts, and smart home features to your taste.</p>
+          <p>We create homes not houses — no two developments are the same and each house is individually designed. Our customer service is attentive and responsive from day one.</p>
         </div>
       </div>
 
@@ -1860,8 +1874,8 @@
         <div class="about-text">
           <span class="section-label">Our Story</span>
           <h2 class="section-title">Where Luxury Meets<br><em class="gold">Perfection</em></h2>
-          <p class="about-desc">At Aushe Properties, we are committed to crafting more than just houses — we build homes. As your trusted partner in real estate development, we combine exceptional design, sustainable practices, and the highest standards of craftsmanship.</p>
-          <p class="about-desc">Founded in 2024, we specialize in helping Zimbabweans abroad invest back home with confidence. From land acquisition to key handover, we guide every step — so you can build your legacy from anywhere in the world.</p>
+          <p class="about-desc">At Aushe Properties, we are committed to crafting more than just houses — we build homes. Every high-quality, thoughtfully designed home we construct in Harare and beyond is meant to be an integral part of its local community and environment. We embrace local design principles, ensuring each project complements its surroundings while enhancing the neighborhood.</p>
+          <p class="about-desc">We prioritize sustainability by using eco-friendly materials whenever possible, minimizing environmental impact while maintaining superior quality. Our projects support the local economy by employing skilled tradespeople and sourcing materials from nearby suppliers. Your new Aushe Property isn't just a house — it's a home tailored to your needs, designed to be a lasting part of your community.</p>
           <div class="about-ctas">
             <a href="https://substack.com/@ausheproperties/posts" target="_blank" rel="noopener noreferrer" class="glass-btn primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
@@ -1874,7 +1888,7 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="images/interior-closet-chandelier-wide.jpg" alt="Aushe Properties luxury interior" loading="lazy">
+          <img src="images/villas/neighborhood.jpg" alt="Aushe Properties Glen Lorne neighborhood" loading="lazy">
         </div>
       </div>
     </div>
@@ -1904,7 +1918,7 @@
       <div class="villa-highlight fade-up">
         <div class="villa-image">
           <div class="villa-image-inner">
-            <img src="images/villa-front-exterior.jpg" alt="Aushe Properties Villa 1 - Front Exterior" loading="lazy">
+            <img src="images/villas/unit1-front.jpg" alt="Aushe Properties Villa 1 - Front Exterior" loading="lazy">
           </div>
           <div class="villa-image-badge">Featured</div>
         </div>
@@ -1938,7 +1952,7 @@
       <div class="villa-highlight reverse fade-up">
         <div class="villa-image">
           <div class="villa-image-inner">
-            <img src="images/villa-aerial-pool.jpg" alt="Aushe Properties Villa 4 - Aerial View with Pool" loading="lazy">
+            <img src="images/villas/unit4-front.jpg" alt="Aushe Properties Villa 4 - Front Exterior" loading="lazy">
           </div>
           <div class="villa-image-badge">Premium</div>
         </div>
@@ -1972,7 +1986,7 @@
       <div class="villa-highlight fade-up">
         <div class="villa-image">
           <div class="villa-image-inner">
-            <img src="images/villa-front-moody.jpg" alt="Aushe Properties Villa 3 - Contemporary Design" loading="lazy">
+            <img src="images/villas/unit3-front.jpg" alt="Aushe Properties Villa 3 - Contemporary Design" loading="lazy">
           </div>
           <div class="villa-image-badge">Modern</div>
         </div>
@@ -2055,6 +2069,14 @@
           </div>
           <h4>Gletwyn Dam</h4>
           <p>10 min drive</p>
+        </div>
+        <div class="location-card">
+          <div class="location-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          </div>
+          <h4>Nightlife</h4>
+          <p>Karma Night Club | 15 mins</p>
+          <p>Tinroof Club | 20 mins</p>
         </div>
       </div>
     </div>
