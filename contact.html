@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="Schedule a consultation with Aushe Properties. Expert guidance for buying land, building homes, and investing in Zimbabwe real estate.">
   <meta name="twitter:image" content="https://ausheproperties.netlify.app/images/villa-front-exterior.jpg">
   <link rel="canonical" href="https://ausheproperties.netlify.app/contact.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text x='50' y='72' text-anchor='middle' font-family='serif' font-size='64' font-weight='bold' fill='%23c4a265'>A</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><defs><linearGradient id='g' x1='0' y1='0' x2='.5' y2='1'><stop offset='0%25' stop-color='%23d4af37'/><stop offset='60%25' stop-color='%23c4a265'/><stop offset='100%25' stop-color='%23a08040'/></linearGradient></defs><path d='M50 14 L82 38 L80 38 L50 17 L20 38 L18 38 Z' fill='url(%23g)' opacity='.9'/><text x='50' y='78' text-anchor='middle' font-family='serif' font-size='52' font-weight='bold' fill='url(%23g)'>A</text><path d='M50 10 L53 14 L50 18 L47 14 Z' fill='%232d6a4f' opacity='.7'/></svg>">
   <style>
     /* ========================================
        RESET & BASE
@@ -255,6 +255,9 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: var(--font-display);
       font-size: 1.4rem;
       font-weight: 700;
@@ -263,6 +266,10 @@
 
     .nav-logo span {
       color: var(--gold);
+    }
+
+    .nav-logo-icon {
+      flex-shrink: 0;
     }
 
     .nav-links {
@@ -1236,12 +1243,19 @@
     }
 
     .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 600;
     }
 
     .footer-logo span { color: var(--gold); }
+
+    .footer-logo-icon {
+      flex-shrink: 0;
+    }
 
     .footer-links {
       display: flex;
@@ -1412,7 +1426,21 @@
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="index.html" class="nav-logo">AUSHE<span>.</span></a>
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="28" height="28" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nav-gold" x1="0" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#d4af37"/>
+              <stop offset="60%" stop-color="#c4a265"/>
+              <stop offset="100%" stop-color="#a08040"/>
+            </linearGradient>
+          </defs>
+          <path d="M100 24 L170 72 L168 72 L100 28 L32 72 L30 72 Z" fill="url(#nav-gold)" opacity="0.9"/>
+          <text x="100" y="152" font-family="Playfair Display, serif" font-size="90" font-weight="700" fill="url(#nav-gold)" text-anchor="middle">A</text>
+          <path d="M100 18 L104 24 L100 30 L96 24 Z" fill="#2d6a4f" opacity="0.7"/>
+        </svg>
+        AUSHE<span>.</span>
+      </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#showcase">Villas</a></li>
@@ -1737,7 +1765,21 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <a href="index.html" class="footer-logo">AUSHE<span>.</span></a>
+      <a href="index.html" class="footer-logo">
+        <svg class="footer-logo-icon" width="24" height="24" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="footer-gold" x1="0" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#d4af37"/>
+              <stop offset="60%" stop-color="#c4a265"/>
+              <stop offset="100%" stop-color="#a08040"/>
+            </linearGradient>
+          </defs>
+          <path d="M100 24 L170 72 L168 72 L100 28 L32 72 L30 72 Z" fill="url(#footer-gold)" opacity="0.9"/>
+          <text x="100" y="152" font-family="Playfair Display, serif" font-size="90" font-weight="700" fill="url(#footer-gold)" text-anchor="middle">A</text>
+          <path d="M100 18 L104 24 L100 30 L96 24 Z" fill="#2d6a4f" opacity="0.7"/>
+        </svg>
+        AUSHE<span>.</span>
+      </a>
       <ul class="footer-links">
         <li><a href="index.html#showcase">Villas</a></li>
         <li><a href="index.html#about">About</a></li>
