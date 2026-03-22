@@ -179,7 +179,6 @@ export async function handler(event) {
     },
     status: 'tentative',
     colorId: '6', // tangerine — stands out on the calendar
-    attendees: email ? [{ email, responseStatus: 'needsAction' }] : [],
     reminders: {
       useDefault: false,
       overrides: [
