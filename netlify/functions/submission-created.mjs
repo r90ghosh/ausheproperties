@@ -101,7 +101,7 @@ async function createCalendarEvent(accessToken, calendarId, event) {
   return res.json();
 }
 
-export default async function handler(event) {
+export async function handler(event) {
   const { payload } = JSON.parse(event.body);
 
   // Only handle the booking form
